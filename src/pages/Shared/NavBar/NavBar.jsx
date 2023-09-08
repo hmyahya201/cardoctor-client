@@ -7,14 +7,20 @@ const NavBar = () => {
     const {user, logOutUser}= useContext(AuthContext)
     const handleLogOut = ()=>{
         logOutUser()
-        .ther(()=>{})
+        .then(()=>{
+            alert("Login is success")
+        })
         .catch(error=>console.log(error))
     }
      const navItems = <>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/about'>About</Link></li>
                 {
-                    user?.email? <button onClick={handleLogOut}>LogOuth</button>:<li><Link to='/login'>Login</Link></li>
+                    user?.email? <>
+                    <button onClick={handleLogOut}>LogOuth</button>
+                    <li><Link to='/bookings'>My Bookings</Link></li>
+                    </>
+                    :<li><Link to='/login'>Login</Link></li>
                 }
                 </>
     return (

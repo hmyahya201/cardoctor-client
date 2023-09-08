@@ -5,14 +5,16 @@ import { AuthContext } from '../../Providers/AuthProviders';
 const Login = () => {
     const {loginUser} = useContext(AuthContext);
     const handleLogin = event=>{
-        event.priventDefault()
+        event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(email, password)
         loginUser(email, password)
         .then(result=>{
              const user = result.user;
              console.log(user);
+             form.reset()
         })
         .then(error=>console.log(error))
     }
