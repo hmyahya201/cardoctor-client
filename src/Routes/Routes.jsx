@@ -6,6 +6,7 @@ import About from "../pages/Home/About/About";
 import SignUp from "../pages/SignUp/SignUp";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import Bookings from "../pages/Bookings/Bookings";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'bookings',
-          element: <Bookings/>
+          element: <PrivateRoute><Bookings/></PrivateRoute>
         },
         {
           path:'about',
