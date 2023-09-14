@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 import { useContext } from 'react';
 import {AuthContext} from '../../Providers/AuthProviders'
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 const SignUp = () => {
     const {createUser} = useContext(AuthContext)
     const handleSignUp = event =>{
@@ -58,6 +59,7 @@ const SignUp = () => {
                          </div>
                    </form>
                    <p>Have an account? <Link to='/login' className='text-orange-600 font-bold'>Login</Link></p>
+                   <SocialLogin/>
                 </div>
             </div>
         </div>

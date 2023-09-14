@@ -2,6 +2,7 @@
 const BookingRow = ({ booking, handleDeleteService, handleBookingConfirm}) => {
   
     const {_id, date, price, img, service, status } = booking;
+
     return (
         <tr>
             <td>
